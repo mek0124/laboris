@@ -1,29 +1,19 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "laboris"
 version = "0.1.0"
-description = "A PySide6 application for effect time keeping"
-readme = "README.md"
-authors = [
-  { name = "mek0124", email = "mek0124@proton.me" }
-]
-license = { text = "MIT" }
+description = "A flask app for efficient time tracking"
 requires-python = ">=3.12"
-classifiers = [
-  "Framework :: PySide6",
-  "Intended Audience :: End Users/Desktop",
-  "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python :: 3.12",
-  "Topic :: Office/Business :: Time Keeping"
-]
 dependencies = [
-  "PySide6>=6.10.1"
+    "flask>=3.1.2",
+    "flask-cors>=6.0.2",
+    "flask-sqlalchemy>=3.1.1",
+    "python-dotenv>=1.2.1",
 ]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["core*", "time_clock*"]
-exclude = ["tests*", "test*"]
+[dependency-groups]
+dev = [
+    "black>=26.1.0",
+    "pytest>=9.0.2",
+    "pytest-flask>=1.3.0",
+    "ruff>=0.14.13",
+]
