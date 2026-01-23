@@ -11,10 +11,10 @@
   font-weight: bold;
   font-style: italic;
   font-size: 0.8rem;
-  color: var(--text-primary);
+  color: var(--foreground);
   width: 100%;
   text-align: center;
 }
 .footer-text > a {
-  color: var(--text-primary);
+  color: var(--foreground);
 }
