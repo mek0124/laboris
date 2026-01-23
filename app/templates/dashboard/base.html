@@ -7,13 +7,65 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/base.css') }}" />
     <title>Laboris - Dashboard</title>
   </head>
-  <body>
-    {% include 'components/header.html' %}
 
+  <body> {% include 'components/header.html' %}
+    text
     <div class="body-container">
       {% include 'dashboard/navbar.html' %}
 
-      <div class="dashboard-container"></div>
+      <div class="dashboard-container">
+        {% if not punch_history %}
+        <div class="no-punches-container">
+          <span
+            style="display: flex; flex-direction: row; align-items: center; justify-content: end; width: 90%; margin: 0.5rem;">
+            <button class="new-entry-button" onclick="openEntryPopup()">
+              +
+            </button>
+          </span>
+
+          <h3 class="title">
+            You have no punches at this time
+          </h3>
+
+          <h3 class="title">
+            Click the '+' button in the top-right
+            corner to get started
+          </h3>
+        </div>
+        {% else %}
+        <div class="punches-container">
+          Punches
+        </div>
+        {% endif %}
+      </div>
     </div>
+
+    <div id="entryPopup" class="entry-popup" onclick="closeEntryPopupOnOverlay(event)">
+      <div class="entry-window" onclick="event.stopPropagation()">
+        {% include 'components/entry.html' %}
+      </div>
+    </div>
+
+    <script>
+      function openEntryPopup() {
+        document.getElementById('entryPopup').style.display = 'flex';
+      }
+
+      function closeEntryPopup() {
+        document.getElementById('entryPopup').style.display = 'none';
+      }
+
+      function closeEntryPopupOnOverlay(event) {
+        if (event.target === document.getElementById('entryPopup')) {
+          closeEntryPopup();
+        }
+      }
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && document.getElementById('entryPopup').style.display === 'flex') {
+          closeEntryPopup();
+        }
+      });
+    </script>
   </body>
 </html>
