@@ -1,0 +1,36 @@
+:root {
+  --primary: #0d0d0f;
+  --secondary: #1a1a1f;
+  --accent: #2d2d35;
+  --accentHover: #48484f;
+  --foreground: #d4d4d4;
+  --blue-accent: #2563eb;
+  --green-accent: #16a34a;
+  --red-accent: #dc2626;
+}
+
+* {
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+}
+
+main,
+.body-container,
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1;
+}

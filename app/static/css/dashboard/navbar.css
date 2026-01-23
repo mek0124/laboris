@@ -1,0 +1,22 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  border-bottom: 2px solid var(--accent);
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+  color: var(--foreground);
+  margin: 0.5rem;
+}
+
+.nav-link.active {
+  background-color: var(--accent);
+  font-weight: bold;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+}

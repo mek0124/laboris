@@ -1,0 +1,359 @@
+:root {
+  --primary: #0d0d0f;
+  --secondary: #1a1a1f;
+  --accent: #2d2d35;
+  --accentHover: #48484f;
+  --foreground: #d4d4d4;
+  --blue-accent: #2563eb;
+  --green-accent: #16a34a;
+  --red-accent: #dc2626;
+}
+
+* {
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+}
+
+main,
+.body-title-container,
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+main,
+.body-container {
+  flex-grow: 1;
+}
+
+.body-title-container {
+  margin-top: 1rem;
+}
+
+.body-container {
+  flex-direction: row;
+  height: 100%;
+}
+
+.body-title,
+.body-subtitle {
+  font-style: italic;
+  color: var(--foreground);
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.body-title {
+  font-size: 1.8rem;
+}
+
+.body-subtitle {
+  font-size: 0.8rem;
+}
+
+.wave-hand {
+  margin-left: 0.5rem;
+  transform-origin: bottom center;
+  animation: wave 1s ease-in-out 5 forwards;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-8deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Additional CSS for welcome page content */
+.welcome-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.feature-card {
+  background: var(--secondary);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--accent);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.feature-card.animate-in {
+  animation: cardAppear 0.6s ease forwards;
+}
+
+@keyframes cardAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue-accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent), var(--blue-accent));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--foreground);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.card-description {
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.card-description strong {
+  color: var(--blue-accent);
+  font-weight: 600;
+}
+
+.privacy-message {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  border-radius: 20px;
+  padding: 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  border: 1px solid var(--accentHover);
+  margin-top: 1rem;
+}
+
+.privacy-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--green-accent), #22c55e);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--foreground);
+}
+
+.privacy-content {
+  flex: 1;
+}
+
+.privacy-title {
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+.privacy-description {
+  color: #d1d1d6;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.privacy-description strong {
+  color: var(--green-accent);
+  font-weight: 600;
+}
+
+.privacy-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.privacy-point {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #a1a1aa;
+  font-size: 0.95rem;
+}
+
+.point-check {
+  color: var(--green-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.getting-started {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--secondary);
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+}
+
+.started-title {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+.started-description {
+  color: #a1a1aa;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.started-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.action-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--blue-accent), #3b82f6);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #3b82f6, var(--blue-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.primary-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-content {
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-message {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .privacy-icon {
+    margin: 0 auto;
+  }
+
+  .privacy-points {
+    grid-template-columns: 1fr;
+  }
+
+  .started-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .getting-started {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Animation for privacy section */
+.privacy-message {
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.getting-started {
+  animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
