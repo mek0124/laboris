@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/entry.css') }}" />
+
+<div class="entry-container">
+  <div class="entry-title-container">
+    <h1 class="entry-title"> New Work Shift </h1>
+  </div>
+
+  <form action="" class="entry-form">
+    <div class="form-body">
+      <div class="form-row"> <label for="jobName" class="form-label"> Workplace Name </label>
+        <input type="text" class="form-input">
+      </div>
+
+      <div class="form-row">
+        <label for="payRate" class="form-label">
+          Pay Rate
+        </label>
+
+        <input type="text" class="form-input">
+      </div>
+
+      <div class="form-row">
+        <label for="entryDate" class="form-label">
+          Date Worked
+        </label>
+
+        <input type="date" class="form-input">
+      </div>
+
+      <div class="form-row">
+        <label for="clockIn" class="form-label">
+          Clock In
+        </label>
+
+        <input type="time" class="form-input">
+      </div>
+
+      <div class="form-row">
+        <label for="mealOut" class="form-label">
+          Meal Start
+        </label>
+
+        <input type="time" class="form-input">
+      </div>
+
+      <div class="form-row">
+        <label for="mealIn" class="form-label">
+          Meal End
+        </label>
+
+        <input type="time" class="form-input">
+      </div>
+
+      <div class="form-row">
+        <label for="clockOut" class="form-label">
+          Clock Out
+        </label>
+
+        <input type="time" class="form-input">
+      </div>
+    </div>
+
+    <div class="summary-items">
+      <table class="summary-table">
+        <tr class="summary-table-row">
+          <th class="summary-header">
+            Workplace
+          </th>
+
+          <th class="summary-header">
+            Pay Rate
+          </th>
+
+          <th class="summary-header">
+            OT Pay Rate
+          </th>
+
+          <th class="summary-header">
+            Date
+          </th>
+
+          <th class="summary-header">
+            Clock In
+          </th>
+
+          <th class="summary-header">
+            Meal Start
+          </th>
+
+          <th class="summary-header">
+            Meal End
+          </th>
+
+          <th class="summary-header">
+            Clock Out
+          </th>
+
+          <th class="summary-header">
+            Total Regular Time
+          </th>
+
+          <th class="summary-header">
+            Total Over Time
+          </th>
+
+          <th class="summary-header">
+            Gross Pay
+          </th>
+        </tr>
+
+        <tbody class="summary-table-body">
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+          <td class="summary-table-data">0</td>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="form-buttons">
+      <button type="button" class="form-button" onclick="closeEntryPopup()">
+        Cancel
+      </button>
+
+      <button class="form-button">
+        Create
+      </button>
+    </div>
+  </form>
+</div>
